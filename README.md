@@ -66,3 +66,14 @@ sudo nixos-rebuild switch
 
 
 Reboot and you should be ready to go
+
+
+## Extra's
+In case you want to use vscode already in your bare system, you can quickly install this in your terminal by sdoing
+
+``
+nix-shell -p vscode xdg-utils pass gnome-keyring
+``
+
+The last packages are included in order to allow syncing with the github
+
