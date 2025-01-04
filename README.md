@@ -25,7 +25,7 @@ sudo cp -r /etc/nixos  /etc/nixos-original
 git clone git@github.com:eelcovv/etc-nixos-configuration.git 
 ``
 
-4. Copy the cloned repository to the etc directory 
+4. Move the cloned repository to the etc directory 
 
 ``
 sudo mv etc-nixos-condifuration /etc/nixos
