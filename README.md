@@ -1,8 +1,11 @@
-# NixOS basic condifuration
+# NixOS basic configuration.nix file
 
-This file contains the basis configuration I use after a fresh reinstall of nixos. It adds 'git' and 'vim' in my profile in order to do some basic editing. Also, it activates my bluetooth so that I can add a mouse. Finally, the experimental nixos features flakes is added.
+Basis configuration.nix file to use for a fresh reinstall of nixos. It does the following:
+1. Add  `git` `vim` and `wget` for basic manipulations 
+2. Turn on bluetooth 
+3. Add `flakes` to nix 
 
-## Instruction to clone this to a fresh install
+## Instruction to use
 
 1. Install git and vim in a temporary shell
 
