@@ -75,5 +75,5 @@ In case you want to use vscode already in your bare system, you can quickly inst
 nix-shell -p vscode xdg-utils pass gnome-keyring
 ``
 
-The last packages are included in order to allow syncing with the github
+The last packages are included in order to allow syncing with the github. In case you are not being redirected after signing in to github: cancel en choose 'Local' as alternative method.
 
