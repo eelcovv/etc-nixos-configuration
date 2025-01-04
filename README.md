@@ -49,7 +49,8 @@ and
 sudo chgrp root /etc/nixos /etc/nixos/configuration.nix
 ``
 
-7. *Important*: restore the link to your harddrive in the new configuration.nix based on your stored version. 
+7. Only if you have encrypted your hardrive, restore the link to your harddrive in the new 
+configuration.nix based on your stored version. 
 Edit line 17 in */etc/configuration.nix* :
 
 ``
@@ -57,6 +58,9 @@ Edit line 17 in */etc/configuration.nix* :
 ``
 
 with the line stored in */etc/nixos-original/configuration.nix*
+
+For now, I haved abandonded encryting the full hard drive as it give some problems in nix, so 
+now I can ignore this step.
 
 8. Rebuild your system and log back in
 
@@ -69,6 +73,8 @@ Reboot and you should be ready to go
 
 
 ## Extra's
+
+### Adding visual studio code
 In case you want to use vscode already in your bare system, you can quickly install this in your terminal by sdoing
 
 ``
@@ -77,3 +83,26 @@ nix-shell -p vscode xdg-utils pass gnome-keyring
 
 The last packages are included in order to allow syncing with the github. In case you are not being redirected after signing in to github: cancel en choose 'Local' as alternative method.
 
+### Setup ssh for github
+
+If you are on a fresh system, you need to initialise ssh in order to be able to clone from github. Do the following:
+
+1. Generated a ssh key: 
+
+   ``ssh-keygen -t rsa``
+
+Create a password when requested
+
+2. Start up a ssh-agent in the current shell: 
+
+   ``eval $(ssh-agent -s)``
+
+3. Add the key to the agent: 
+
+    ``ssh-add``
+
+Type the password you have just created
+
+4. Copy the public key to clipboard from *~/.ssh/id_pub.rsa* and paste is in git hub -> ssh-key
+
+5. Now you can clone from github without typing a password
