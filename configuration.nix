@@ -14,7 +14,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  boot.initrd.luks.devices."luks-f3e09069-f818-43b2-98a7-a79a9a10c8fa".device = "/dev/disk/by-uuid/f3e09069-f818-43b2-98a7-a79a9a10c8fa";
+  boot.initrd.luks.devices."luks-0bb5b2e7-2d53-43eb-92a4-80d50e74876f".device = "/dev/disk/by-uuid/0bb5b2e7-2d53-43eb-92a4-80d50e74876f";
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -47,8 +47,8 @@
   services.xserver.enable = true;
 
   # Enable the XFCE Desktop Environment.
-  services.xserver.displayManager.lightdm.enable = true;
-  services.xserver.desktopManager.xfce.enable = true;
+  services.displayManager.sddm.enable = true;
+  services.desktopManager.plasma6.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
