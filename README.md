@@ -34,7 +34,7 @@ sudo mv etc-nixos-condifuration /etc/nixos
 5. Copy the safed hardware-configuration to your new nixos folder
 
 ``
-cp /etc/nixos-original/hardware-configuration.nix /etc/nixos/hardware-configuration.nix
+cp /etc/nixos-original/hardware-configuration.nix /etc/nixos/
 ``
 
 6. Change the ownership of the new nixos folder and its contents. Keep the .git folder intact.
@@ -48,12 +48,14 @@ and
 sudo chgrp root /etc/nixos /etc/nixos/configuration.nix
 ``
 
-7. *Important*: restore the link to your harddrive in the new configuration.nix based on your stored version. Edit /etc/configuration and replace line 17 with:
+7. *Important*: restore the link to your harddrive in the new configuration.nix based on your stored version. 
+Edit line 17 in */etc/configuration.nix* :
 
 ``
   boot.initrd.luks.devices."luks-0bb5b2e7...
 ``
-with the version stored in */etc/nixos-original/configuration.nix*
+
+with the line stored in */etc/nixos-original/configuration.nix*
 
 8. Rebuild your system and log back in
 
@@ -61,3 +63,5 @@ with the version stored in */etc/nixos-original/configuration.nix*
 sudo nixos-rebuild switch
 ``
 
+
+Reboot and you should be ready to go
