@@ -42,6 +42,7 @@ cp /etc/nixos-original/hardware-configuration.nix /etc/nixos/
 ``
 sudo chmod root /etc/nixos /etc/nixos/configuration.nix
 ``
+
 and 
 
 ``
