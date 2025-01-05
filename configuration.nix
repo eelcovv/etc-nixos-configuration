@@ -134,10 +134,7 @@
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
   services.blueman.enable = true;
 
-  nix.package = pkgs.nixUnstable;
-  nix.extraOptions = ''
-     experimental-features = nix-command flakes
-  '';
-
+  # add by default flakes
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
 }
